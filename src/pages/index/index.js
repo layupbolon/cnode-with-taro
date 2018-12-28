@@ -24,8 +24,7 @@ class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <View><Text>Hello, World</Text></View>
-        <Head></Head>
+        <Head />
       </View>
     )
   }

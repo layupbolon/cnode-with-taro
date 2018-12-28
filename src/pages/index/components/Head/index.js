@@ -36,20 +36,20 @@ class Head extends Component {
     }
 
     render(){
-    const { selectedIndex} = this.props;
-    let dataSource = ['全部', '精华', '分享', '问答', '招聘'];
-    if (process.env.NODE_ENV === 'development') {
-        dataSource.push('测试');
+        const { selectedIndex} = this.props;
+        let dataSource = ['全部', '精华', '分享', '问答', '招聘'];
+        if (process.env.NODE_ENV === 'development') {
+            dataSource.push('测试');
+        }
+        return (
+            <AtSegmentedControl
+                className={styles.head}
+                current={selectedIndex}
+                values={dataSource}
+                onClick={this.handleClick.bind(this)}
+            />
+        );
     }
-    return (
-        <AtSegmentedControl
-          className={styles.head}
-          current={selectedIndex}
-          values={dataSource}
-          onClick={this.handleClick.bind(this)}
-        />
-    );
-}
 }
 
 function mapStateToProp({ topicList }) {

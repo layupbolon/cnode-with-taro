@@ -1,3 +1,5 @@
+import {USER} from '../config'
+
 export const randomData = () => {
     return Math.random().toString(36).substr(2);
 };
@@ -20,4 +22,16 @@ export const dataFormat = (str) => {
     } else {
         return parseInt((time / 31536000000).toString(), 0) + '年前';
     }
+};
+
+export const getUserInfo = () => {
+    const storageResult = Taro.getStorageSync(USER);
+    if (!storageResult) {
+        Taro.navigateTo({
+            url: '/pages/login/index'
+          })
+        return false;
+    }
+
+    return JSON.parse(storageResult);
 };
