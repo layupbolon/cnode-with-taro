@@ -1,6 +1,6 @@
-import Taro, { Component } from '@tarojs/taro'
-import { connect } from '@tarojs/redux'
-import { AtSegmentedControl }  from 'taro-ui'
+import Taro, { Component } from '@tarojs/taro';
+import { connect } from '@tarojs/redux';
+import { AtSegmentedControl }  from 'taro-ui';
 
 import styles from './index.less';
 
@@ -43,10 +43,10 @@ class Head extends Component {
         }
         return (
             <AtSegmentedControl
-                className={styles.head}
-                current={selectedIndex}
-                values={dataSource}
-                onClick={this.handleClick.bind(this)}
+              className={styles.head}
+              current={selectedIndex}
+              values={dataSource}
+              onClick={this.handleClick.bind(this)}
             />
         );
     }

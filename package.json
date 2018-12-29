@@ -18,7 +18,7 @@
     "dev:rn": "npm run build:rn -- --watch",
     "update": "taro update project"
   },
-  "author": "",
+  "author": "EricYin",
   "license": "MIT",
   "dependencies": {
     "@tarojs/async-await": "^1.2.2",

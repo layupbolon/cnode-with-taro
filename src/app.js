@@ -1,11 +1,12 @@
-import '@tarojs/async-await'
-import Taro, { Component } from '@tarojs/taro'
-import { Provider } from '@tarojs/redux'
+import '@tarojs/async-await';
+import Taro, { Component } from '@tarojs/taro';
+import { Provider } from '@tarojs/redux';
 
-import dva from './utils/dva'
-import models from './models'
-import Index from './pages/index/index'
-import './app.less'
+import dva from './utils/dva';
+import models from './models';
+import Index from './pages/index/index';
+import './app.less';
+import './styles/Iconfont/iconfont.css';
 
 const dvaApp = dva.createApp({
   initialState: {},
@@ -68,8 +69,8 @@ class App extends Component {
       <Provider store={store}>
         <Index />
       </Provider>
-    )
+    );
   }
 }
 
-Taro.render(<App />, document.getElementById('app'))
+Taro.render(<App />, document.getElementById('app'));

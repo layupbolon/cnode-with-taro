@@ -1,9 +1,9 @@
-import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
-import { connect } from '@tarojs/redux'
+import Taro, { Component } from '@tarojs/taro';
+import { View, Text } from '@tarojs/components';
+import { connect } from '@tarojs/redux';
 
-import Head from './components/Head'
-import './index.less'
+import Head from './components/Head';
+import './index.less';
 
 class Index extends Component {
 
@@ -12,7 +12,7 @@ class Index extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
+    console.log(this.props, nextProps);
   }
 
   componentWillUnmount () { }
@@ -26,8 +26,8 @@ class Index extends Component {
       <View className='index'>
         <Head />
       </View>
-    )
+    );
   }
 }
 
-export default Index
+export default Index;

@@ -10,7 +10,7 @@ class Comment extends Component {
     constructor() {
         super(...arguments);
         this.state = {
-        content: ''
+        	content: ''
         };
     }
 
@@ -52,7 +52,7 @@ class Comment extends Component {
 	  return (
 	    <View className='comment'>
 	      <View className='input'>
-	        <AtTextarea placeholder={commetTo ? `@${commetTo}` : '回复支持Markdown语法,请注意标记代码'} value={content} onChange={this.handleTextAreaChange} />
+	        <AtTextarea className='textarea' placeholder={commetTo ? `@${commetTo}` : '回复支持Markdown语法,请注意标记代码'} value={content} onChange={this.handleTextAreaChange} />
 	      </View>
 	      <View className='btnWrap'>
 	        <AtButton className='btn' onClick={this.handleBtnClick}>回复</AtButton>
