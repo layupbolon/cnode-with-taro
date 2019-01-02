@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro';
 import { AtIcon } from 'taro-ui';
 
-import '../../Iconfont/iconfont.css';
+import '../../styles/Iconfont/iconfont.css';
 import './index.less';
 
 class Icon extends Component {
