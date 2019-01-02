@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro';
 import { connect } from '@tarojs/redux';
 import { AtSegmentedControl } from 'taro-ui';
 
-import styles from './index.less';
+import './index.less';
 
 class Head extends Component {
 	mapTabNameToCode(value) {
@@ -51,7 +51,7 @@ class Head extends Component {
 		}
 		return (
 			<AtSegmentedControl
-				className={styles.head}
+				className='head'
 				current={selectedIndex}
 				values={dataSource}
 				onClick={this.handleClick.bind(this)}

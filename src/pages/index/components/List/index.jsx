@@ -11,11 +11,10 @@ class List extends Component {
 
 		return (
 			<ScrollView
-				className="scrollview"
 				scrollY
 				scrollWithAnimation
 				scrollTop="0"
-				style="height: 550px;"
+				style="height: calc(93vh-50px);margin-top:7vh;"
 				lowerThreshold="20"
 				upperThreshold="20"
 				// onScrollToUpper={this.onScrollToUpper}
