@@ -51,7 +51,7 @@ class Head extends Component {
 		}
 		return (
 			<AtSegmentedControl
-				className='head'
+				className="head"
 				current={selectedIndex}
 				values={dataSource}
 				onClick={this.handleClick.bind(this)}
