@@ -134,6 +134,13 @@
   dependencies:
     less "^3.0.4"
 
+"@tarojs/plugin-sass@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-sass/-/plugin-sass-1.2.3.tgz#f291374356cf8e14a5844f3c4cd278e883c58fb3"
+  integrity sha512-3qV2arNjN3SAj+Wzpp962nUiyvcNdTd41RWt4vxz7iRIsZS5CFEzgQf9XEf8JEp8m2YnyKYDBUq4CI57UuhpuQ==
+  dependencies:
+    node-sass "^4.8.3"
+
 "@tarojs/plugin-uglifyjs@^1.2.2":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@tarojs/plugin-uglifyjs/-/plugin-uglifyjs-1.2.2.tgz#9e0c55ae718d076305d4e6387597fb8b3afdf8ce"

@@ -1,39 +1,59 @@
 import Taro, { Component } from '@tarojs/taro';
-import { ScrollView } from '@tarojs/components';
+import { ScrollView, View } from '@tarojs/components';
+import { AtActivityIndicator } from 'taro-ui';
 import { connect } from '@tarojs/redux';
 
 import ListItem from '../ListItem';
+import './index.less';
 
-class List extends Component {
+@connect(({ topicList }) => {
+	return {
+		dataSource: topicList.topicDatasource
+	};
+})
+export default class List extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			isLoading: false
+		};
+		this.onScrollToLower = this.onScrollToLower.bind(this);
+	}
+	onScrollToLower() {
+		if (this.state.isLoading) {
+			return;
+		}
+		Promise.resolve()
+			.then(() => this.setState({ isLoading: true }))
+			.then(() => this.props.dispatch({ type: 'topicList/getNextPageTopicData' }))
+			.then(() => {
+				this.setState({ isLoading: false });
+			});
+	}
+
 	render() {
 		const { dataSource } = this.props;
-		console.log('dataSource: ', dataSource);
-
+		const { isLoading } = this.state;
 		return (
-			<ScrollView
-				scrollY
-				scrollWithAnimation
-				scrollTop="0"
-				style="height: calc(93vh-50px);margin-top:7vh;"
-				lowerThreshold="20"
-				upperThreshold="20"
-				// onScrollToUpper={this.onScrollToUpper}
-				// onScrollToLower={this.onScrollToLower}
-				// onScroll={this.onScroll}
-			>
-				{dataSource.map((item, index) => {
-					return <ListItem rowData={item} key={index} />;
-				})}
-			</ScrollView>
+			<View className="listWrap">
+				<ScrollView
+					scrollY
+					scrollWithAnimation
+					scrollTop="0"
+					style='height:86vh;'
+					lowerThreshold="30"
+					onScrollToLower={this.onScrollToLower}
+				>
+					{dataSource.map((item, index) => {
+						return <ListItem rowData={item} key={index} />;
+					})}
+				</ScrollView>
+				{isLoading && (
+					<View className="loading">
+						<AtActivityIndicator />
+					</View>
+				)}
+			</View>
 		);
 	}
 }
-
-function mapStateToProps(state) {
-	const { topicDatasource } = state.topicList;
-	return {
-		dataSource: topicDatasource
-	};
-}
-
-export default connect(mapStateToProps)(List);

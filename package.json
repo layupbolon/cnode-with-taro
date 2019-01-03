@@ -45,6 +45,7 @@
     "@tarojs/plugin-babel": "^1.2.2",
     "@tarojs/plugin-csso": "^1.2.2",
     "@tarojs/plugin-less": "^1.2.2",
+    "@tarojs/plugin-sass": "^1.2.3",
     "@tarojs/plugin-uglifyjs": "^1.2.2",
     "@tarojs/webpack-runner": "^1.2.2",
     "@types/react": "^16.4.8",

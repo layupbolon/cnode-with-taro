@@ -4,7 +4,7 @@ const initState = {
 	headSelectedIndex: 0,
 	topicDatasource: [],
 	pageIndex: 1,
-	pageSize: 10,
+	pageSize: 15,
 	tab: 'all'
 };
 
