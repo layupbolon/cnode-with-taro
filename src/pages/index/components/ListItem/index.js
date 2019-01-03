@@ -9,7 +9,7 @@ class ListItem extends Component {
 	handleGoToDetailPage = () => {
 		const { rowData } = this.props;
 		Taro.navigateTo({
-			url: `/pages/topicDetail/index?id=${rowData.id}`
+			url: `/pages/detail/index?id=${rowData.id}`
 		});
 	};
 

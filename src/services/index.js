@@ -28,7 +28,7 @@ export function GetTopics(setting) {
 }
 
 export function GetTopicDetail(id, accesstoken) {
-    let url = '/topic/${id}?${randomData()}';
+    let url = `/topic/${id}?${randomData()}`;
     if (accesstoken) {
         url += `&mdrender=true&accesstoken=${accesstoken}`;
     }

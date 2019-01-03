@@ -1,0 +1,69 @@
+.topicDetailContainer {
+    :global(.content) {
+        font-size: 13px !important;
+        line-height: 23px !important;
+        padding: 10px 8px 15px;
+      }
+
+	.detailContainer {
+		margin-top: 7vh;
+
+		.infoContainer {
+			width: 100%;
+			height: 7vh;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			.infoTitle {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				padding-left: 20px;
+
+				.userImage {
+					width: 70px;
+					height: 70px;
+				}
+
+				.info {
+					display: flex;
+					flex-direction: column;
+					margin-left: 20px;
+
+					.line {
+						height: 33px;
+						line-height: 33px;
+
+						span {
+							font-size: 25px;
+							color: #000000;
+
+							&.authorName {
+								color: #94c73b;
+								margin-right: 10px;
+							}
+						}
+					}
+				}
+			}
+
+			.logo {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+				width: 90px;
+			}
+		}
+
+		.topicTitle {
+			background: #eeeeee;
+			font-size: 34px;
+			font-weight: bold;
+			padding: 8px 10px 8px;
+			line-height: 50px;
+		}
+	}
+}

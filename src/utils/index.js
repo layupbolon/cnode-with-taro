@@ -1,3 +1,4 @@
+import Taro from '@tarojs/taro';
 import {USER} from '../config'
 
 export const randomData = () => {
@@ -28,7 +29,7 @@ export const getUserInfo = () => {
     const storageResult = Taro.getStorageSync(USER);
     if (!storageResult) {
         Taro.navigateTo({
-            url: '/pages/login/index'
+            url: '/pages/index/index'
           })
         return false;
     }

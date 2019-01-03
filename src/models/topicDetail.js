@@ -8,22 +8,6 @@ export default {
         dataSource: {},
         replyItems: [],
     },
-    // subscriptions: {
-    //     setup({ dispatch, history }) {
-    //         return history.listen(({ pathname }) => {
-    //             const result = _.split(_.trimStart(pathname, '/'), '/');
-    //             if (result[0] === 'topicDetail') {
-    //                 const storageResult = localStorage.getItem('User');
-    //                 if (storageResult) {
-    //                     const userInfo = JSON.parse(storageResult);
-    //                     dispatch({ type: 'getTopicDetailData', payload: { id: result[1], accesstoken: userInfo.accesstoken }});
-    //                 } else {
-    //                     dispatch({ type: 'getTopicDetailData', payload: { id: result[1] }});
-    //                 }
-    //             }
-    //         });
-    //     },
-    // },
     reducers: {
         changeState(state, { payload }) {
             return { ...state, ...payload};
@@ -45,16 +29,16 @@ export default {
 
             yield put({
                 type: 'changeState',
-                payload: { key: 'dataSource', value: topicData.data.data }
+                payload: { dataSource: topicData.data }
             });
 
-            if (topicData.data.data.replies && topicData.data.data.replies.length > 0) {
-                topicData.data.data.replies.forEach(item => {
+            if (topicData.data.replies && topicData.data.replies.length > 0) {
+                topicData.data.replies.forEach(item => {
                     item.showReplyBox = false;
                 });
                 yield put({
                     type: 'changeState',
-                    payload: { key: 'replyItems', value: topicData.data.data.replies }
+                    payload: { replyItems: topicData.data.replies }
                 });
             }
         },
@@ -83,7 +67,7 @@ export default {
 
                 yield put({
                     type: 'changeState',
-                    payload: { key: 'replyItems', value: replyItems }
+                    payload: { replyItems: replyItems }
                 });
             }
         },
@@ -99,7 +83,7 @@ export default {
             }
             yield put({
                 type: 'changeState',
-                payload: { key: 'replyItems', value: replyItems }
+                payload: { replyItems: replyItems }
             });
         },
 
