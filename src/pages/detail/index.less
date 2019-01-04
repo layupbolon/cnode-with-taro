@@ -1,9 +1,9 @@
 .topicDetailContainer {
-    :global(.content) {
-        font-size: 13px !important;
-        line-height: 23px !important;
-        padding: 10px 8px 15px;
-      }
+	:global(.content) {
+		font-size: 25px !important;
+		line-height: 35px !important;
+		padding: 15px;
+	}
 
 	.detailContainer {
 		margin-top: 7vh;
@@ -64,6 +64,61 @@
 			font-weight: bold;
 			padding: 8px 10px 8px;
 			line-height: 50px;
+		}
+
+		.topicReply {
+			background: #eee;
+			border-left: 25px solid #80bd01;
+			font-size: 30px;
+			height: 70px;
+			line-height: 70px;
+			padding-left: 20px;
+
+			span{
+				color: #80bd01;
+				font-size: 34px;
+			}
+		}
+
+		.repliesContainer{
+			width: 100%;
+			height: auto;
+
+			.replyContainer{
+				display: flex;
+				flex-direction: row;
+				height: 100%;
+				width: 100%;
+				padding: 20px;
+				box-sizing: border-box;
+
+				.userImg{
+					width: 100px;
+					height: 100%;
+				}
+
+				.replyDetail{
+					display: flex;
+					flex-direction: column;
+					flex: 1;
+					position: relative;
+
+					.floorIndex{
+						position: absolute;
+						top: 0;
+						right: 0;
+					}
+
+					.replyInfo{
+						font-size: 20px;
+						color: #666;
+					}
+
+					.icons{
+						align-self: flex-end;
+					}
+				}
+			}
 		}
 	}
 }

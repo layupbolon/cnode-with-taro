@@ -35,13 +35,8 @@ class Detail extends Component {
 
 	render() {
 		const { dataSource, replies, dispatch } = this.props;
-		console.log('dataSource: ', dataSource);
 
 		if (!dataSource || !dataSource.id) return null;
-
-        // const json = parser.getRichTextJson(dataSource.content)
-		// console.log('dataSource.content: ', dataSource.content);
-		// console.log('json.children: ', json.children);
 
 		const storageResult = localStorage.getItem('User');
 
@@ -82,13 +77,55 @@ class Detail extends Component {
 						</View>
 					</View>
 					<View className="topicTitle">{dataSource.title}</View>
-                    <View className="content markdown-body">
-                        <RichText nodes={dataSource.content} />
-                    </View>
-					
-					{/* <View className="content markdown-body" dangerouslySetInnerHTML={{ __html: dataSource.content }} /> */}
+					<View className="content markdown-body">
+						<RichText nodes={dataSource.content} />
+					</View>
 					<View className="topicReply">
 						共<Text>{dataSource.reply_count}</Text>条回复
+					</View>
+					<View className='repliesContainer'>
+						{replies.map((item, index) => {
+							return (
+								<View className="replyContainer">
+									<View className="userImg">
+										<UserImage style={{ margin: '10px' }} imageUrl={item.author.avatar_url} />
+									</View>
+									<View className="replyDetail">
+										<Text className='floorIndex'>#{index + 1}</Text>
+										<View className='replyInfo'>
+											<Text
+												onClick={() => {
+													// <Link className={styles.replyInfo_left_name}
+													// to={`/user/${item.author.loginname}`}
+												}}
+											>
+												{item.author.loginname}
+											</Text>
+											<Text>{dataFormat(item.create_at)}</Text>
+										</View>
+										<View className="content markdown-body">
+											<RichText nodes={item.content} />
+										</View>
+										<View className='icons'>
+											<View>
+												<Icon
+													iconType={'dianzan'}
+													iconClassName="logo"
+													fontSize={25}
+												/>
+											</View>
+											<View>
+												<Icon
+													iconType={'huifu'}
+													iconClassName="logo"
+													fontSize={25}
+												/>
+											</View>
+										</View>
+									</View>
+								</View>
+							);
+						})}
 					</View>
 
 					{storageResult && <Comment topic_id={dataSource.id} />}
