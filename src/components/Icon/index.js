@@ -7,11 +7,11 @@ import './index.less';
 
 class Icon extends Component {
 	render() {
-		const { iconType, iconClassName, fontSize = 16 } = this.props;
+		const { iconType, iconClassName, fontSize = 16,iconColor='#ffffff' } = this.props;
 		if (iconType) {
 			return (
 				<View className={'icon-' + iconType + '-background ' + iconClassName}>
-					<AtIcon className="iconfont" prefixClass="icon" value={iconType} size={fontSize} color="#ffffff" />
+					<AtIcon className="iconfont" prefixClass="icon" value={iconType} size={fontSize} color={iconColor} />
 				</View>
 			);
 		} else {

@@ -1,12 +1,13 @@
 .topicDetailContainer {
 	:global(.content) {
-		font-size: 25px !important;
+		font-size: 28px !important;
 		line-height: 35px !important;
 		padding: 15px;
 	}
 
 	.detailContainer {
 		margin-top: 7vh;
+		overflow: hidden;
 
 		.infoContainer {
 			width: 100%;
@@ -82,18 +83,17 @@
 
 		.repliesContainer{
 			width: 100%;
-			height: auto;
 
 			.replyContainer{
 				display: flex;
 				flex-direction: row;
-				height: 100%;
 				width: 100%;
 				padding: 20px;
 				box-sizing: border-box;
+				border-bottom: 1px solid #ddd;
 
 				.userImg{
-					width: 100px;
+					width: 130px;
 					height: 100%;
 				}
 
@@ -107,15 +107,35 @@
 						position: absolute;
 						top: 0;
 						right: 0;
+						font-size: 25px;
 					}
 
 					.replyInfo{
-						font-size: 20px;
+						font-size: 25px;
 						color: #666;
+
+						.color-green{
+							color: #80bd01;
+							margin-right: 20px;
+						}
 					}
 
 					.icons{
 						align-self: flex-end;
+						display: flex;
+						flex-direction: row;
+
+						.zan{
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							margin-right: 20px;
+
+							span{
+								font-size: 30px;
+								margin-top: 14px;
+							}
+						}
 					}
 				}
 			}
