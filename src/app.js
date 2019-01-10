@@ -20,6 +20,8 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/detail/index',
+      'pages/mine/index',
+      'pages/login/index',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -46,7 +48,7 @@ class App extends Component {
           "text": "消息"
         },
         {
-          "pagePath": "pages/index/index",
+          "pagePath": "pages/mine/index",
           "text": "我的"
         }
       ]

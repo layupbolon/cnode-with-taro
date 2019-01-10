@@ -42,7 +42,7 @@ class Detail extends Component {
 
 		return (
 			<View className="topicDetailContainer">
-				<AtNavBar onClickLeftIcon={this.handleGoBack} color="#000" title="详 情" leftText="返回" fixed={true} />
+				<AtNavBar onClickLeftIcon={this.handleGoBack} color="#000" title="详 情" leftText="返回" leftIconType='chevron-left' fixed={true} />
 				<View className="detailContainer">
 					<View className="infoContainer">
 						<View className="infoTitle">
